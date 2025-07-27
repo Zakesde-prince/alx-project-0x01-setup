@@ -65,7 +65,10 @@ export interface UserData {
   };
 }
 
+import { UserProps } from "./index"; // if not already imported
+
 export interface UserModalProps {
   onClose: () => void;
-  onSubmit: (user: UserData) => void;
+  onSubmit: (post: UserProps) => void;
 }
+
