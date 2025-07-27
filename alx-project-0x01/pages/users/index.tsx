@@ -1,5 +1,5 @@
-import UserCard from "@/components/common/UserCard";
 import Header from "@/components/layout/Header";
+import UserCard from "@/components/common/UserCard";
 import { UserProps } from "@/interfaces";
 
 interface UsersPageProps {
@@ -11,9 +11,13 @@ const Users: React.FC<UsersPageProps> = ({ posts }) => {
     <div className="flex flex-col h-screen">
       <Header />
       <main className="p-4">
-        <h1 className="text-2xl font-semibold mb-4">User Directory</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {posts?.map((user, index) => (
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-2xl font-semibold">User List</h1>
+          <button className="bg-green-700 px-4 py-2 rounded-full text-white">Add User</button>
+        </div>
+
+        <div className="grid grid-cols-3 gap-4">
+          {posts.map((user, index) => (
             <UserCard key={index} {...user} />
           ))}
         </div>
